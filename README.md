@@ -9,12 +9,12 @@ Building Blocks of Complex Networks".
 
 ## Group Members
 
-| Name | Roll Number | Section |
-|------|-------------|---------|
-| TODO  | 25i-0764     | C       |
-| TODO  | 25i-0600     | C       |
-| TODO  | 25i-3205     | C       |
-| TODO  | 25p-3021     | C       |
+| Name              | Roll Number | Section |
+|-------------------|-------------|---------|
+| Ahmed Bin Akhtar  | 25i-0764    | C       |
+| Syed Harun Pirzada| 25i-0600    | C       |
+| Awkash            | 25i-3205    | C       |
+| Hammad Haider     | 25p-3021    | C       |
 
 ## Parameters (derived from R)
 
@@ -73,4 +73,14 @@ tables and the grouped bar chart.
 
 ## Contributions
 
-- TODO
+- **Ahmed Bin Akhtar (25i-0764):** project setup, GitHub repository,
+  data loading and cleaning, induced subgraph construction, top-20
+  department ranking, parameter derivation, main pipeline
+  (`motif.py`), README.
+- **Syed Harun Pirzada (25i-0600):** triad encoding and canonical
+  classification (`triad_class`), connected-triad counting logic.
+- **Awkash (25i-3205):** null-model randomization (`randomize`,
+  double-edge swaps), degree-preservation verification, Z-score
+  computation.
+- **Hammad Haider (25p-3021):** results analysis, chart generation,
+  video presentation, interpretation of department differences.
