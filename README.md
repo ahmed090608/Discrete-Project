@@ -9,12 +9,12 @@ Building Blocks of Complex Networks".
 
 ## Group Members
 
-| Name              | Roll Number | Section |
-|-------------------|-------------|---------|
-| Ahmed Bin Akhtar  | 25i-0764    | B       |
-| Syed Harun Pirzada| 25i-0600    | B       |
-| Awkash            | 25i-3205    | B       |
-| Hammad Haider     | 25p-3021    | B       |
+| Name               | Roll Number |
+|--------------------|-------------|
+| Ahmed Bin Akhtar   | 25i-0764    |
+| Syed Harun Pirzada | 25i-0600    |
+| Awkash             | 25i-3205    |
+| Hammad Haider      | 25p-3021    |
 
 ## Parameters (derived from R)
 
