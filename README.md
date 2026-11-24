@@ -16,6 +16,8 @@ Building Blocks of Complex Networks".
 | Awkash             | 25i-3205    |
 | Hammad Haider      | 25p-3021    |
 
+Section: B
+
 ## Parameters (derived from R)
 
 - Roll suffixes: 764 + 600 + 3205 + 3021
