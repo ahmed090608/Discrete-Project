@@ -1,14 +1,11 @@
-import gzip
 import math
 import random
 from collections import defaultdict
+from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-
-EDGES_FILE = "email-Eu-core.txt"
-LABELS_FILE = "email-Eu-core-department-labels.txt"
+DATA_DIR = Path(__file__).resolve().parent
+EDGES_FILE = DATA_DIR / "email-Eu-core.txt"
+LABELS_FILE = DATA_DIR / "email-Eu-core-department-labels.txt"
 
 # Last-4 digits of each group member's roll number (25X prefix ignored).
 ROLL_SUFFIXES = [764, 600, 3205, 3021]
@@ -199,28 +196,7 @@ def main():
         for _ in range(NUM_RANDOM):
             rand_edges = randomize(sub_edges, attempts, rng)
             check_degrees_preserved(sub_edges, rand_edges)
-            radj = defaultdict(set)
-            for u, v in rand_edges:
-                radj[u].add(v)
-            rneighbors = defaultdict(set)
-            for u, v in rand_edges:
-                rneighbors[u].add(v)
-                rneighbors[v].add(u)
-            rc = [0] * 14
-            rnodes = sorted({u for e in rand_edges for u in e})
-            seen = set()
-            for v in rnodes:
-                nbrs = sorted(rneighbors[v])
-                for i in range(len(nbrs)):
-                    for j in range(i + 1, len(nbrs)):
-                        triad = tuple(sorted((v, nbrs[i], nbrs[j])))
-                        if triad in seen:
-                            continue
-                        seen.add(triad)
-                        cls = triad_class(*triad, radj)
-                        if cls:
-                            rc[cls] += 1
-            random_counts.append(rc[1:])
+            random_counts.append(count_triads(nodes, rand_edges))
 
         z = zscores(observed, random_counts)
         results[name] = (dept, observed, z)
@@ -236,7 +212,10 @@ def main():
 
 
 def plot_results(results):
-    classes = list(range(1, 14))
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     za = results["A"][2]
     zb = results["B"][2]
     x = range(1, 14)

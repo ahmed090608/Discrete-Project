@@ -50,7 +50,15 @@ python motif.py
 
 The script prints the parameter list, the top-20 departments, observed
 triad counts, Z-scores, motifs and anti-motifs for both departments,
-and writes `motif_chart.png` (titled with R).
+and writes `motif_chart.png` (titled with R) in the current directory.
+The dataset files are located relative to `motif.py`, so the script can
+be launched from another working directory.
+
+Run the unit tests with:
+
+```
+python -m unittest
+```
 
 ## Method
 
