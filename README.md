@@ -92,5 +92,6 @@ tables and the grouped bar chart.
 - **Awkash (25i-3205):** null-model randomization (`randomize`,
   double-edge swaps), degree-preservation verification, Z-score
   computation.
-- **Hammad Haider (25p-3021):** results analysis, chart generation,
-  video presentation, interpretation of department differences.
+- **Hammad Haider (25p-3021):** added unit tests and fixed relative
+  dataset lookup; results analysis, chart generation, video
+  presentation, interpretation of department differences.
